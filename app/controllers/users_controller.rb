@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
 
+  def welcome
+    redirect_to categories_path if signed_in?
+  end
+
   # GET /users or /users.json
   def index
     @users = User.all

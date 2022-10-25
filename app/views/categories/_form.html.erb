@@ -1,3 +1,88 @@
+<% icon_list =[
+    {
+      icon: 'airplane',
+      title: 'airplane',
+    },
+    {
+      icon: 'art',
+      title: 'art',
+    },
+    {
+      icon: 'car',
+      title: 'car',
+    },
+    {
+      icon: 'entertainment',
+      title: 'entertainment',
+    },
+    {
+      icon: 'fashion',
+      title: 'fashion',
+    },
+    {
+      icon: 'food',
+      title: 'food',
+    },
+    {
+      icon: 'furniture',
+      title: 'furniture',
+    },
+    {
+      icon: 'health',
+      title: 'health',
+    },
+    {
+      icon: 'home',
+      title: 'home',
+    },
+    {
+      icon: 'insurance',
+      title: 'insurance',
+    },
+    {
+      icon: 'medicine',
+      title: 'medicine',
+    },
+    {
+      icon: 'movie',
+      title: 'movie',
+    },
+    {
+      icon: 'music',
+      title: 'music',
+    },
+    {
+      icon: 'pet',
+      title: 'pet',
+    },
+    {
+      icon: 'restaurant',
+      title: 'restaurant',
+    },
+    {
+      icon: 'shoe',
+      title: 'shoe',
+    },
+    {
+      icon: 'sport',
+      title: 'sport',
+    },
+    {
+      icon: 'studying',
+      title: 'studying',
+    },
+    {
+      icon: 'tech',
+      title: 'tech',
+    },
+    {
+      icon: 'transportation',
+      title: 'transportation',
+    },
+
+  ] %>
+
+
 <%= form_with(model: category) do |form| %>
   <% if category.errors.any? %>
     <div style="color: red">
@@ -15,16 +100,19 @@
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
+  
+  <p>Select an icon from the list</p>
+    
+    <ul>
+    
+    <% icon_list.each do |icon_option|%>
+      <li class="newcategory__option-list">
+        <%= form.radio_button :icon, icon_option[:icon] %> 
+        <img class="newcategory_img" src="<%=asset_path("#{icon_option[:icon]}.png") %>" alt=<%=icon_option[:title]%>>
+      </li>
+       <% end %>
+   </ul>
 
-  <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
-  </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
 
   <div>
     <%= form.submit %>

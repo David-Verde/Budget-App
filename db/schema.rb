@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_213946) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_25_171705) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_213946) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_categories_on_user_id"
+  end
+
+  create_table "categories_payments", id: false, force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "payment_id", null: false
+    t.index ["category_id", "payment_id"], name: "index_categories_payments_on_category_id_and_payment_id"
+    t.index ["payment_id", "category_id"], name: "index_categories_payments_on_payment_id_and_category_id"
   end
 
   create_table "payments", force: :cascade do |t|
@@ -42,6 +49,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_213946) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
