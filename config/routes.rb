@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :payments
-  resources :categories
   resources :users
+  resources :categories do
+    resources :payments, only: [:index, :new, :create, :edit, :update, :show, :destroy]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "users#welcome"
+  root to: "categories#index"
+
+
 
 
 end
