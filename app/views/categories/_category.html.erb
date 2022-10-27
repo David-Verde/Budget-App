@@ -1,15 +1,17 @@
 <div id="<%= dom_id category %>">
+  
+  <div id="dom_id">
   <p>
     <strong>Name:</strong>
     <%= category.name %>
   </p>
-  
 
+ 
 
 <img class="newcategory_img" src="<%=asset_path("#{category.icon}.png") %>">
 
 <p>
-  $<%= category.total_amount_category %>
-</p>
+      $ <%= category.total_amount_category %>
+    </p>
 
 </div>

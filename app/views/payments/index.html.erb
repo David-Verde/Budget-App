@@ -1,18 +1,23 @@
+<%= render "shared/navbar" %>
 <p style="color: green"><%= notice %></p>
 
-<h1>Payments</h1>
-<%= @category.name%>
+<h1 class="payment-font">Payments</h1>
+<div class= "cat-name">
+<%= @category.name %>
+</div>
 <div id="payments">
   <% @payments.each do |payment| %>
   
     <%= render payment %>
-    <p>
+    <p class="show-pay">
      <%= link_to "Show this payment", category_payment_path(@category, payment) %>
 
     </p>
   <% end %>
-</div>
-
-<%= link_to "New payment", new_category_payment_path %>
+<div class= "links-shared">
+<div>
+<%= link_to "New payment", new_category_payment_path(@category) %>
 
 <%= link_to "Back to categories", categories_path %>
+</div>
+

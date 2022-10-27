@@ -9,10 +9,5 @@ RSpec.describe 'categories/show', type: :view do
                                   ))
   end
 
-  it 'renders attributes in <p>' do
-    render
-    expect(rendered).to match(/Name/)
-    expect(rendered).to match(/Icon/)
-    expect(rendered).to match(//)
-  end
+  
 end

@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_category, only: %i[show edit update destroy]
-before_action :authenticate_user!
 
   # GET /categories or /categories.json
   def index
@@ -25,7 +25,7 @@ before_action :authenticate_user!
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to categories_url(@categories), notice: 'Category was successfully created.' }
+        format.html { redirect_to categories_url, notice: 'Category was successfully created.' }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new, status: :unprocessable_entity }

@@ -1,4 +1,4 @@
-<% icon_list =[
+<% icon_categories =[
     {
       icon: 'airplane',
       title: 'airplane',
@@ -79,10 +79,9 @@
       icon: 'transportation',
       title: 'transportation',
     },
+] %>
 
-  ] %>
-
-
+<div class="newcategory_container">
 <%= form_with(model: category) do |form| %>
   <% if category.errors.any? %>
     <div style="color: red">
@@ -96,25 +95,23 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="newcategory_field">
+    <%= form.label :name, style: "display: block", class: 'form_label' %>
+    <%= form.text_field :name, class: 'form_input' %>
   </div>
+   <p class="newcategory_text">Select an icon from the list</p>
   
-  <p>Select an icon from the list</p>
+    <ul class="newcategory_option">
     
-    <ul>
-    
-    <% icon_list.each do |icon_option|%>
-      <li class="newcategory__option-list">
-        <%= form.radio_button :icon, icon_option[:icon] %> 
-        <img class="newcategory_img" src="<%=asset_path("#{icon_option[:icon]}.png") %>" alt=<%=icon_option[:title]%>>
+    <% icon_categories.each do |icon_category|%>
+      <li class="newcategory_option-list">
+        <%= form.radio_button :icon, icon_category[:icon] %> 
+        <img class="newcategory_img" src="<%=asset_path("#{icon_category[:icon]}.png") %>" alt=<%=icon_category[:title]%>>
       </li>
        <% end %>
-   </ul>
-
-
-  <div>
-    <%= form.submit %>
+    </ul>
+  <div class="newcategory_button">
+    <%= form.submit :class => 'btn-form'%>
   </div>
 <% end %>
+</div>
