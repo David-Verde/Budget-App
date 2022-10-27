@@ -1,0 +1,117 @@
+<% icon_categories =[
+    {
+      icon: 'airplane',
+      title: 'airplane',
+    },
+    {
+      icon: 'art',
+      title: 'art',
+    },
+    {
+      icon: 'car',
+      title: 'car',
+    },
+    {
+      icon: 'entertainment',
+      title: 'entertainment',
+    },
+    {
+      icon: 'fashion',
+      title: 'fashion',
+    },
+    {
+      icon: 'food',
+      title: 'food',
+    },
+    {
+      icon: 'furniture',
+      title: 'furniture',
+    },
+    {
+      icon: 'health',
+      title: 'health',
+    },
+    {
+      icon: 'home',
+      title: 'home',
+    },
+    {
+      icon: 'insurance',
+      title: 'insurance',
+    },
+    {
+      icon: 'medicine',
+      title: 'medicine',
+    },
+    {
+      icon: 'movie',
+      title: 'movie',
+    },
+    {
+      icon: 'music',
+      title: 'music',
+    },
+    {
+      icon: 'pet',
+      title: 'pet',
+    },
+    {
+      icon: 'restaurant',
+      title: 'restaurant',
+    },
+    {
+      icon: 'shoe',
+      title: 'shoe',
+    },
+    {
+      icon: 'sport',
+      title: 'sport',
+    },
+    {
+      icon: 'studying',
+      title: 'studying',
+    },
+    {
+      icon: 'tech',
+      title: 'tech',
+    },
+    {
+      icon: 'transportation',
+      title: 'transportation',
+    },
+] %>
+
+<div class="newcategory_container">
+<%= form_with(model: category) do |form| %>
+  <% if category.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+        <% category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="newcategory_field">
+    <%= form.label :name, style: "display: block", class: 'form_label' %>
+    <%= form.text_field :name, class: 'form_input' %>
+  </div>
+   <p class="newcategory_text">Select an icon from the list</p>
+  
+    <ul class="newcategory_option">
+    
+    <% icon_categories.each do |icon_category|%>
+      <li class="newcategory_option-list">
+        <%= form.radio_button :icon, icon_category[:icon] %> 
+        <img class="newcategory_img" src="<%=asset_path("#{icon_category[:icon]}.png") %>" alt=<%=icon_category[:title]%>>
+      </li>
+       <% end %>
+    </ul>
+  <div class="newcategory_button">
+    <%= form.submit :class => 'btn-form'%>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,10 @@
+<%= render "shared/navbar" %>
+<p style="color: green"><%= notice %></p>
+
+<%= render @payment %>
+
+<div>
+  <%= link_to "Back to payments", category_payments_path %>
+
+  <%= button_to "Destroy this Payment", @payment_path, method: :delete %>
+</div>
