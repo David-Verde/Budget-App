@@ -8,7 +8,4 @@ RSpec.describe 'categories/edit', type: :view do
                                     user: nil
                                   ))
   end
-
-
-  
 end

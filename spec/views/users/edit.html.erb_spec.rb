@@ -6,5 +6,4 @@ RSpec.describe 'users/edit', type: :view do
                             name: 'MyString'
                           ))
   end
-
 end

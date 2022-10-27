@@ -24,7 +24,6 @@ RSpec.describe '/users', type: :request do
     skip('Add a hash of attributes invalid for your model')
   end
 
-
   describe 'PATCH /update' do
     context 'with valid parameters' do
       let(:new_attributes) do

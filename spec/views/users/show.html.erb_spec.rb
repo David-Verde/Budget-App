@@ -6,5 +6,4 @@ RSpec.describe 'users/show', type: :view do
                             name: 'Name'
                           ))
   end
-
 end

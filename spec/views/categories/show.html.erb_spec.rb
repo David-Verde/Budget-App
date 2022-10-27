@@ -8,6 +8,4 @@ RSpec.describe 'categories/show', type: :view do
                                     user: nil
                                   ))
   end
-
-  
 end

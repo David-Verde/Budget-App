@@ -9,6 +9,4 @@ RSpec.describe 'payments/edit', type: :view do
                                   category: nil
                                 ))
   end
-
- 
 end

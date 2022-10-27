@@ -17,6 +17,4 @@ RSpec.describe 'payments/index', type: :view do
              )
            ])
   end
-
-
 end
