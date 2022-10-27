@@ -13,5 +13,3 @@ RSpec.describe User, type: :model do
     expect(@user).not_to be_valid
   end
 end
-
-fiakjawfw}{}
