@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before(:each) do
-    @user = User.new(name: 'Dino', email: 'dino@mail.com', password: '123456')
+    @user = User.new(name: 'David', email: 'david@mail.com', password: '123456')
     @user.skip_confirmation!
     @user.save
   end
@@ -13,3 +13,5 @@ RSpec.describe User, type: :model do
     expect(@user).not_to be_valid
   end
 end
+
+fiakjawfw}{}
