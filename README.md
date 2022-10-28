@@ -87,6 +87,7 @@ Give a :star: if you like this project!
 
 ## Acknowledgements
 Gregoire Vella on Behance 
+Thanks for let me use the Template
 
 Authors
 👤 **David Verde Alvarez**
