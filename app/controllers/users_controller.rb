@@ -11,8 +11,8 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1 or /users/1.json
-  def show;
-    redirect_to categories_path if signed_in?  
+  def show
+    redirect_to categories_path if signed_in?
   end
 
   # GET /users/new
