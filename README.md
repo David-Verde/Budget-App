@@ -38,7 +38,7 @@ Project to create the first configuration of ruby on rails
 https://www.loom.com/share/18271cf949f34ea58e85f124fc50449e
 
 ### Live Version
-https://sleepy-island-45842.herokuapp.com
+https://nameless-escarpment-50776.herokuapp.com/categories
 
 ###
  <a href="https://github.com/David-Verde/Budget-App">
