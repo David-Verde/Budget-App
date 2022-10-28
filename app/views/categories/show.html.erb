@@ -1,0 +1,13 @@
+<%= render "shared/navbar" %>
+<p style="color: green"><%= notice %></p>
+
+<%= render @category %>
+
+<div class="show-btn">
+  <%= link_to "Edit this category", edit_category_path(@category) %> 
+  <%= link_to "Back to categories", categories_path %>
+
+  <%= button_to "Destroy this category", @category, method: :delete, class: "destroy-btn" %>
+  <%= link_to category_payments_path(@category) do %>See Payments<% end %>
+
+</div>
