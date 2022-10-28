@@ -1,0 +1,17 @@
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+remote.origin.url=https://github.com/David-Verde/Budget-App.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.develop.remote=origin
+branch.develop.merge=refs/heads/develop
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+branch.scaffold.remote=origin
+branch.scaffold.merge=refs/heads/scaffold
+branch.scaffold.github-pr-owner-number=David-Verde#Budget-App#1
+remote.heroku.url=https://git.heroku.com/infinite-forest-50155.git
+remote.heroku.fetch=+refs/heads/*:refs/remotes/heroku/*

@@ -6,7 +6,7 @@ class PaymentsController < ApplicationController
 
   # GET /payments or /payments.json
   def index
-    @payments = @category.payments.includes(:categories_payments).includes([:categories])
+    @payments = @category.payments
   end
 
   # GET /payments/1 or /payments/1.json

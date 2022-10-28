@@ -6,11 +6,11 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'devise'
 gem 'dotenv-rails'
+gem 'devise'
 gem 'rails', '~> 7.0.4'
 gem 'rubocop', '>= 1.0', '< 2.0'
-
+ruby "3.1.2"
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server

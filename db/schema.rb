@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_25_171705) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_28_165038) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,15 +26,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_171705) do
   create_table "categories_payments", id: false, force: :cascade do |t|
     t.bigint "category_id", null: false
     t.bigint "payment_id", null: false
-    t.index ["category_id", "payment_id"], name: "index_categories_payments_on_category_id_and_payment_id"
-    t.index ["payment_id", "category_id"], name: "index_categories_payments_on_payment_id_and_category_id"
   end
 
   create_table "payments", force: :cascade do |t|
     t.string "name"
     t.float "amount"
     t.bigint "user_id", null: false
-    t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_payments_on_user_id"
