@@ -6,8 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'dotenv-rails'
 gem 'devise'
+gem 'dotenv-rails'
 gem 'rails', '~> 7.0.4'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
