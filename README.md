@@ -85,7 +85,8 @@ https://github.com/David-Verde/Budget-App.git
 Give a :star: if you like this project!
 
 
-
+## Acknowledgements
+Gregoire Vella on Behance 
 
 Authors
 👤 **David Verde Alvarez**
